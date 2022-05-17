@@ -11,6 +11,6 @@ def asdf(jarvis, s):
     i = 2 + 1
     if i == 5:
         i = 6
-    elif (not x is None):
+    elif (x is not None):
         x = "asdf"
     print(x)
