@@ -1,15 +1,14 @@
 scanner:
     diff_only: True  # If False, the entire file touched by the Pull Request is scanned for errors. If True, only the diff is scanned.
-    linter: flake8  # Other option is flake8
+    linter: flake8  # Other option is pycodestyle
 
-pycodestyle:  # Same as scanner.linter value. Other option is flake8
+flake8:  # Same as scanner.linter value. Other option is pycodestyle
     max-line-length: 79  # Default is 79 in PEP 8
     ignore:  # Errors and warnings to ignore
-        - W504  # line break after binary operator
-        - E402  # module level import not at top of file
-        - E731  # do not assign a lambda expression, use a def
-        - C406  # Unnecessary list literal - rewrite as a dict literal.
-        - E741  # ambiguous variable name
+        - E772  # Do not use bare except, specify exception instead
+        - W503  # Line break occurred before a binary operator
+        - W504  # Line break occurred after binary operator
+        - E128  # Continuation line under-indented for visual indent 
 
 no_blank_comment: True  # If True, no comment is made on PR without any errors.
 descending_issues_order: False  # If True, PEP 8 issues in message will be displayed in descending order of line numbers in the file
